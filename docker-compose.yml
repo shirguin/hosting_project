@@ -5,14 +5,14 @@ services:
     build:
       dockerfile: _docker/php/Dockerfile
     volumes:
-      - './:/var/www/html'
+      - './:/var/www/hostingproject'
 
   nginx:
     image: nginx:latest
     ports:
       - 80:80
     volumes:
-      - './:/var/www/html'
+      - './:/var/www/hostingproject'
       - './_docker/nginx/conf.d:/etc/nginx/conf.d'
 
   mysql:
